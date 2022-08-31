@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/richardlwebb/local_python/issues">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">Local Python</h3>
@@ -23,19 +23,12 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -49,7 +42,30 @@
   apt install -y jq gawk
   ```
 
+### Installation
 
+The steps bellow will generate Dockerfiles for all the supported builds.
+
+```sh
+./update.sh   
+```
+
+If you encounter any errors you can run each script individually
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/richardlwebb/local_python.git
+   ```
+3. Run versions script
+   ```sh
+   ./versions.sh
+   ```
+4. Run Apply Templates script
+   ```sh
+   ./apply-templates.sh
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
