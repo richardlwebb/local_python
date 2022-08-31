@@ -34,17 +34,17 @@ has_linux_version() {
 	return 0
 }
 
-has_windows_version() {
-	local dir="$1"; shift
-	local dirVersion="$1"; shift
-	local fullVersion="$1"; shift
-
-	if ! wget -q -O /dev/null -o /dev/null --spider "https://www.python.org/ftp/python/$dirVersion/python-$fullVersion-amd64.exe"; then
-		return 1
-	fi
-
-	return 0
-}
+#has_windows_version() {
+#	local dir="$1"; shift
+#	local dirVersion="$1"; shift
+#	local fullVersion="$1"; shift
+#
+#	if ! wget -q -O /dev/null -o /dev/null --spider "https://www.python.org/ftp/python/$dirVersion/python-$fullVersion-amd64.exe"; then
+#		return 1
+#	fi
+#
+#	return 0
+#}
 
 for version in "${versions[@]}"; do
 	rcVersion="${version%-rc}"
@@ -79,9 +79,9 @@ for version in "${versions[@]}"; do
 		# varnish is great until it isn't (usually the directory listing we scrape below is updated/uncached significantly later than the release being available)
 		if has_linux_version "$version" "$rcPossible" "$possible"; then
 			fullVersion="$possible"
-			if has_windows_version "$version" "$rcPossible" "$possible"; then
-				hasWindows=1
-			fi
+			#if has_windows_version "$version" "$rcPossible" "$possible"; then
+			#	hasWindows=1
+			#fi
 			break
 		fi
 
